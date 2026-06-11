@@ -1,6 +1,6 @@
 # Hikari · Lámparas 3D
 
-Sitio web estático de Hikari — catálogo de lámparas artesanales impresas en 3D.
+Sitio web estático de Hikari — catálogo de lámparas artesanales.
 
 ## Contenido
 - `index.html` — la página (abrila en cualquier navegador)
