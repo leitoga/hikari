@@ -316,8 +316,8 @@ class Component extends DCLogic {
       if (!fotos.length && q.foto) fotos = [q.foto];
       q.fotos = fotos.slice(0, 10);
       q.foto = q.fotos[0] || '';
-      q.coloresLampara = (Array.isArray(q.coloresLampara) && q.coloresLampara.length) ? q.coloresLampara.slice(0, 10) : ['#FFFFFF'];
-      q.coloresBase = (Array.isArray(q.coloresBase) && q.coloresBase.length) ? q.coloresBase.slice(0, 10) : ['#FFFFFF'];
+      q.coloresLampara = Array.isArray(q.coloresLampara) ? q.coloresLampara.slice(0, 10) : ['#FFFFFF'];
+      q.coloresBase = Array.isArray(q.coloresBase) ? q.coloresBase.slice(0, 10) : ['#FFFFFF'];
       return q;
     });
   }
@@ -507,8 +507,8 @@ class Component extends DCLogic {
       + ', fotos:[' + fotosArr.map(esc).join(', ') + ']'
       + ', luz:' + esc(p.luz || 'ambas') + ', intensidades:' + (Number(p.intensidades) || 0)
       + ', conector:' + esc(p.conector || 'usb') + ', alturaCm:' + (Number(p.alturaCm) || 0)
-      + ', coloresLampara:[' + ((Array.isArray(p.coloresLampara) && p.coloresLampara.length ? p.coloresLampara : ['#FFFFFF']).map(esc).join(', ')) + ']'
-      + ', coloresBase:[' + ((Array.isArray(p.coloresBase) && p.coloresBase.length ? p.coloresBase : ['#FFFFFF']).map(esc).join(', ')) + ']'
+      + ', coloresLampara:[' + ((Array.isArray(p.coloresLampara) ? p.coloresLampara : ['#FFFFFF']).map(esc).join(', ')) + ']'
+      + ', coloresBase:[' + ((Array.isArray(p.coloresBase) ? p.coloresBase : ['#FFFFFF']).map(esc).join(', ')) + ']'
       + ' },';
     }).join('\n');
     return header + '\nwindow.HIKARI_PRODUCTOS = [\n' + rows + '\n];\n\ntry { window.dispatchEvent(new Event(\'hikari-productos\')); } catch (e) {}\n';
